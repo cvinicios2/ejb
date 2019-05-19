@@ -17,7 +17,8 @@ public class TestaQuestao {
 		Avaliacao avaliacao = (Avaliacao) Naming.lookup("rmi://127.0.0.1:1099/avaliacao");
 
 		
-		List<Questao> lista = avaliacao.obterQuestoes(2);
+		List<Questao> lista = avaliacao.obterQuestoes(1);
+		System.out.println(lista.size());
 		for (Questao questao : lista) {
 			System.out.println(questao.getDescricao());
 			List<Resposta> respostas = (List<Resposta>) questao.getRespostas();
