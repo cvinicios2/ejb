@@ -6,6 +6,7 @@ import java.util.Collection;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -29,7 +30,7 @@ public class Questao implements Serializable {
 	@Column(name = "descricao")
 	private String descricao;
 	
-	@OneToMany(cascade = CascadeType.ALL, targetEntity = Resposta.class, mappedBy = "questao")
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, targetEntity = Resposta.class, mappedBy = "questao")
 	private Collection respostas;
 	
 	/* Deve ser um atributo transient porque não será armazenado no banco de dados */
