@@ -1,12 +1,11 @@
 package br.com.fiap;
 
+import java.rmi.Remote;
+import java.rmi.RemoteException;
 import java.util.List;
 
-import javax.ejb.Remote;
+public interface Avaliacao extends Remote {
 
-@Remote
-public interface Avaliacao {
-
-   public List obterQuestoes(int codigoAvaliacao);
-   public void removerEJB();
+   List obterQuestoes(int codigoAvaliacao) throws RemoteException;
+   void removerEJB() throws RemoteException;
 }

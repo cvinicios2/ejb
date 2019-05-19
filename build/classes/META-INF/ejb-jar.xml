@@ -7,7 +7,6 @@
     <enterprise-beans>
 		<session>
 			<ejb-name>AvaliacaoEJB</ejb-name>
-			<home>br.com.fiap.ejb.hello.HelloHome</home>
 			<remote>br.com.fiap.bean.QuestaoBean</remote>
 			<ejb-class>br.com.fiap.model.Questao</ejb-class>
 			<session-type>Stateless</session-type>
