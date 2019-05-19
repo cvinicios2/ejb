@@ -15,16 +15,17 @@ public class TestaQuestao {
 	public static void main(String[] args) throws Exception {
 		
 		Avaliacao avaliacao = (Avaliacao) Naming.lookup("rmi://127.0.0.1:1099/avaliacao");
-
 		
 		List<Questao> lista = avaliacao.obterQuestoes(1);
-		System.out.println(lista.size());
 		for (Questao questao : lista) {
-			System.out.println(questao.getDescricao());
+			System.out.println(questao.getId()+ "-" + questao.getDescricao());
 			List<Resposta> respostas = (List<Resposta>) questao.getRespostas();
+			int cont = 1;
 			for (Resposta resp : respostas) {
-				System.out.println(resp.getDescricao());
+				System.out.println(cont +"-"+resp.getDescricao());
+				cont++;
 			}
+			System.out.println(" ");
 		}
 		
 		}
