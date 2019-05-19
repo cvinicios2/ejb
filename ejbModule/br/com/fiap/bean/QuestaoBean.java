@@ -6,12 +6,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
 import br.com.fiap.Avaliacao;
 import br.com.fiap.model.Questao;
 
 @Stateless(mappedName = "avaliacao/questoes")
 public class QuestaoBean extends UnicastRemoteObject implements Avaliacao{
+	
+	@PersistenceContext(unitName="avaliacao")
+	EntityManager em;
 
 	private List<Questao> questoes = new ArrayList<Questao>();
 	private static final long serialVersionUID = 1L;
@@ -21,7 +26,8 @@ public class QuestaoBean extends UnicastRemoteObject implements Avaliacao{
 	}
 
 	public List obterQuestoes(int codigoAvaliacao) {
-		// TODO Auto-generated method stub
+		em.createQuery("from Chamado ch where ch.descricao=:descricao");
+		em.setParameter("descricao", "nonono").getResultList();
 		return null;
 	}
 
