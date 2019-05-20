@@ -1,11 +1,9 @@
-package br.com.fiap.rmi;
+package br.com.fiap;
 
 import java.rmi.Naming;
 import java.rmi.registry.LocateRegistry;
 
 import javax.naming.InitialContext;
-
-import br.com.fiap.bean.QuestaoBean;
 
 public class RegistraQuestao {
 

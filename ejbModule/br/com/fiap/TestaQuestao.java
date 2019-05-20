@@ -1,12 +1,11 @@
-package br.com.fiap.testa;
+package br.com.fiap;
 
 
 import java.rmi.Naming;
 import java.util.List;
 
-import br.com.fiap.Avaliacao;
-import br.com.fiap.model.Questao;
-import br.com.fiap.model.Resposta;
+import br.com.fiap.common.Questao;
+import br.com.fiap.common.Resposta;
 
 
 public class TestaQuestao {
@@ -16,7 +15,7 @@ public class TestaQuestao {
 		
 		Avaliacao avaliacao = (Avaliacao) Naming.lookup("rmi://127.0.0.1:1099/avaliacao");
 		
-		List<Questao> lista = avaliacao.obterQuestoes(1);
+		List<Questao> lista = avaliacao.obterQuestoes(2);
 		for (Questao questao : lista) {
 			System.out.println(questao.getId()+ "-" + questao.getDescricao());
 			List<Resposta> respostas = (List<Resposta>) questao.getRespostas();

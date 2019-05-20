@@ -3,8 +3,8 @@ xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001
 xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">    
 	<persistence-unit name="avaliacao" transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
-		<class>br.com.fiap.model.Questao</class>
-		<class>br.com.fiap.model.Resposta</class>
+		<class>br.com.fiap.common.Questao</class>
+		<class>br.com.fiap.common.Resposta</class>
 		<exclude-unlisted-classes>false</exclude-unlisted-classes>
 		<properties>
  			<property name="hibernate.connection.username" value="root"/>

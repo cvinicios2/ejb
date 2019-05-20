@@ -1,4 +1,4 @@
-package br.com.fiap.bean;
+package br.com.fiap;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
@@ -12,8 +12,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
-import br.com.fiap.Avaliacao;
-import br.com.fiap.model.Questao;
+import br.com.fiap.common.Questao;
 
 @Stateless(mappedName = "avaliacao")
 @Remote(Avaliacao.class)
@@ -31,7 +30,8 @@ public class QuestaoBean extends UnicastRemoteObject implements Avaliacao {
 
 	public List obterQuestoes(int codigoAvaliacao) throws RemoteException {
 
-		Query query = em.createQuery("SELECT q FROM Questao q");
+		Query query = em.createQuery("SELECT q FROM Questao q where codigo =:codigo");
+		query.setParameter("codigo", codigoAvaliacao);
 		return query.getResultList();
 	}
 

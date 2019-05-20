@@ -1,4 +1,4 @@
-package br.com.fiap.model;
+package br.com.fiap.common;
 
 import java.io.Serializable;
 import java.util.Collection;
