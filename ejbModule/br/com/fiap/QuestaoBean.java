@@ -30,7 +30,7 @@ public class QuestaoBean extends UnicastRemoteObject implements Avaliacao {
 
 	public List obterQuestoes(int codigoAvaliacao) throws RemoteException {
 
-		Query query = em.createQuery("SELECT q FROM Questao q where codigo =:codigo");
+		Query query = em.createQuery("SELECT q FROM Questao q where codigoavaliacao =:codigo");
 		query.setParameter("codigo", codigoAvaliacao);
 		return query.getResultList();
 	}
